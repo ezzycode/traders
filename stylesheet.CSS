@@ -1,0 +1,329 @@
+:root {
+    --bg: #f6c2dc;
+    --table-bg: #f069ac;
+    --primary: #69f0e7;
+    --primary-dark: #d8c049;
+    --text: #fff;
+    --text-dark: #000;
+    --gray-light: #f0f0f0;
+    --inactive: #ff8000;
+    --offline: #808080;
+    --table-head: #408080;
+    --table-head-text: #fff;
+    --status--filled: #ff8000;
+    --status--cancelled: #ff8000;
+    --status--pending: #ff8040;
+    --border-color: #00ffff;
+    --font: 'poppins', monospace;
+    --font-size-base: 0.25rem;
+    --font-size-large: 1.2rem;
+    --font-size-small: 0.85rem;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1 rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+}
+
+ *body {
+    margin: 25px;
+    padding: 20;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: var(--primary);
+    color: var(--white);
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.table-widget {
+    border-radius: 1rem;
+    background: var(--table-bg);
+    padding: var(--spacing-lg);
+    box-shadow: rgba(197, 76, 28, 0.627);
+    box-shadow: 0 4px 8px rgba(140, 207, 98, 0.2);
+    text-align: left;
+    overflow-x: auto;
+    color: var(--text);
+    border: 1px solid var(--border-color);
+    font-size: var(--font-size-base);
+    min-width: 700px;
+    max-width: 100%;
+}
+
+.table-widget h2 {
+    border-collapse: collapse;
+    text-align: center;
+    font-size: var(--font-size-large);
+    font-weight: 600;
+    gap: 0.5rem;
+    display: flex;
+}
+
+.table-widget h2 svg {
+    color: var(--primary-dark);
+    width: 1.5rem;
+    /* Added width for SVG */
+    height: 1.5rem;
+    /* Added height for SVG */
+    margin-right: 0.5rem;
+    /* Added margin for spacing */
+}
+
+.table-widget h2 span {
+    color: var(--text-dark);
+    font-size: var(--font-size-small);
+    font-weight: 400;
+}
+
+.table-widget table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    /* Added table-layout property */
+}
+
+.table-widget th {
+    background: var(--table-head);
+    color: var(--table-head-text);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    vertical-align: middle;
+    /* Fixed typo */
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    position: relative;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+.table-widget th:hover {
+    background: var(--primary-dark);
+    color: var(--text-dark);
+}
+
+.table-widget th:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-dark);
+    opacity: 0.1;
+}
+
+.table-widget th::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-dark);
+    opacity: 0.1;
+}
+
+.table-widget th::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-dark);
+    opacity: 0.1;
+}
+
+.table-widget .caption {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-dark);
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.table-widget .caption span {
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+.tablet-widget thead {
+    background: var(--table-head);
+    color: var(--table-head-text)
+}
+
+.table-widget tbody tr {
+    background: var(--table-bg);
+    color: var(--text-dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    font-weight: 400;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.3s ease-in-out;
+}
+
+.table-widget tbody tr:hover {
+    background: var(--primary-dark);
+    color: var(--text-dark);
+}
+
+.table-widget tbody tr:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-dark);
+    opacity: 0.1;
+}
+
+.table-widget tbody tr:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-dark);
+    opacity: 0.1;
+}
+
+.table-widget tbody tr td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    font-weight: 400;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.3s ease-in-out;
+}
+
+.table-widget tbody tr:nth-child(odd) {
+    background: var(--table-bg);
+}
+
+.table-widget tbody tr:nth-child(even) {
+    background: var(--table-bg);
+}
+
+/* expand button */
+.table-widget .expand-btn {
+    background: var(--primary);
+    color: var(--text);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.table-widget .expand-btn:hover {
+    background: var(--primary-dark);
+    color: var(--text-dark);
+}
+
+.table-widget .expand-btn:svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.table-widget th:hover {
+    color: var(--text-dark);
+    background: var(--primary-light);
+    /* Added background color on hover */
+}
+
+.table-widget th:hover::after,
+.table-widget th:hover::before {
+    color: var(--primary);
+}
+
+.table-widget th.sorted-asc::after {
+    content: '^';
+}
+
+.table-widget th.sorted-desc::after {
+    content: 'v'
+}
+
+.table-widget td {
+    padding: var(--spacing-md);
+    background: transparent;
+    color: var (--text);
+    vertical-align: middle;
+    border-bottom: 1px solid var (--gray-light);
+    white-space: nowrap;
+}
+
+/* Company Profile */
+.company-profile {
+    display: flex;
+    align-items: center;
+    gap: var (--spacing-md);
+}
+
+.company-profile img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid var (--text);
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs)
+}
+
+/* Status */
+.status {
+    display: flex;
+    font-weight: 700;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.status {
+    border-radius: 0.5rem;
+    width: fit-content;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-weight: 600;
+    color: var(--white);
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s ease;
+    text-transform: capitalize;
+}
+
+.status--filed {
+    color: var(--status--filled);
+    border: 1px solid var(--status--filled);
+}
+
+.status--cancelled {
+    color: var(--status--cancelled);
+    border: 1px solid var(--status--cancelled);
+}
+
+.status--pending {
+    color: var(--status--pending);
+    border: 1px solid var(--status--pending);
+
+}
